@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SignalTabWidget</class>
+ <widget class="QWidget" name="SignalTabWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1150</width>
+    <height>687</height>
+   </rect>
+  </property>
+  <property name="styleSheet">
+   <string>background-color: #ffffff; color: #1a1a1a;</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_4">
+   <item>
+    <widget class="QPushButton" name="btn_cargar">
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="toolTip">
+      <string>Cargar señal biomédica (ECG, EEG) en formato MATLAB .mat</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton { background-color: #33691e; color: white; border: none; padding: 8px 16px; border-radius: 5px; font-size: 14px; font-weight: bold; } QPushButton:hover { background-color: #558b2f; } QPushButton:pressed { background-color: #1b5e20; }</string>
+     </property>
+     <property name="text">
+      <string>📂  CARGAR SEÑAL </string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="group_canales">
+     <property name="styleSheet">
+      <string>QGroupBox { border: 2px solid #33691e; border-radius: 5px; margin-top: 10px; padding-top: 10px; color: #558b2f; }</string>
+     </property>
+     <property name="title">
+      <string>Seleccion de Canales</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="lbl_inicio">
+        <property name="styleSheet">
+         <string>color: #33691e;</string>
+        </property>
+        <property name="text">
+         <string>Inicio:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="spin_canal_inicio">
+        <property name="styleSheet">
+         <string>QSpinBox { background-color: #e8f0e2; color: #1a1a1a; border: 1px solid #33691e; }</string>
+        </property>
+        <property name="minimum">
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>99999</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lbl_fin">
+        <property name="styleSheet">
+         <string>color: #33691e;</string>
+        </property>
+        <property name="text">
+         <string>Fin:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="spin_canal_fin">
+        <property name="styleSheet">
+         <string>QSpinBox { background-color: #e8f0e2; color: #1a1a1a; border: 1px solid #33691e; }</string>
+        </property>
+        <property name="minimum">
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>99999</number>
+        </property>
+        <property name="value">
+         <number>100</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_seleccionar_canales">
+        <property name="styleSheet">
+         <string>QPushButton { background-color: #33691e; color: white; border: none; padding: 6px; border-radius: 5px; } QPushButton:hover { background-color: #558b2f; }</string>
+        </property>
+        <property name="text">
+         <string>VISUALIZAR</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lbl_canal_ruido">
+        <property name="styleSheet">
+         <string>color: #33691e;</string>
+        </property>
+        <property name="text">
+         <string>Canal ruido:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="spin_canal_ruido">
+        <property name="styleSheet">
+         <string>QSpinBox { background-color: #e8f0e2; color: #1a1a1a; border: 1px solid #33691e; }</string>
+        </property>
+        <property name="minimum">
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>999</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="combo_tipo_ruido">
+        <property name="styleSheet">
+         <string>QComboBox { background-color: #e8f0e2; color: #1a1a1a; border: 1px solid #33691e; } QComboBox QAbstractItemView { background-color: #ffffff; color: #1a1a1a; selection-background-color: #558b2f; selection-color: white; }</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_agregar_ruido">
+        <property name="styleSheet">
+         <string>QPushButton { background-color: #e63946; color: white; border: none; padding: 6px; border-radius: 5px; } QPushButton:hover { background-color: #ff6b6b; }</string>
+        </property>
+        <property name="text">
+         <string>AGREGAR RUIDO</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="group_stats">
+     <property name="styleSheet">
+      <string>QGroupBox { border: 2px solid #33691e; border-radius: 5px; margin-top: 10px; padding-top: 10px; color: #558b2f; }</string>
+     </property>
+     <property name="title">
+      <string>Estadisticas</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QRadioButton" name="radio_eje_0">
+        <property name="styleSheet">
+         <string>color: #1a1a1a;</string>
+        </property>
+        <property name="text">
+         <string>Eje 0 (Canales)</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="radio_eje_1">
+        <property name="styleSheet">
+         <string>color: #1a1a1a;</string>
+        </property>
+        <property name="text">
+         <string>Eje 1 (Tiempo)</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="radio_eje_2">
+        <property name="styleSheet">
+         <string>color: #1a1a1a;</string>
+        </property>
+        <property name="text">
+         <string>Eje 2 (Trials)</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_calcular_stats">
+        <property name="styleSheet">
+         <string>QPushButton { background-color: #33691e; color: white; border: none; padding: 6px; border-radius: 5px; } QPushButton:hover { background-color: #558b2f; }</string>
+        </property>
+        <property name="text">
+         <string>CALCULAR PROMEDIO Y DESVIACION</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="group_visualizacion">
+     <property name="styleSheet">
+      <string notr="true">QGroupBox { border: 2px solid #33691e; border-radius: 4px; margin-top: 10px; padding-top: 10px; color: #558b2f; }</string>
+     </property>
+     <property name="title">
+      <string>Visualizacion</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QFrame" name="frame_senal">
+        <property name="minimumSize">
+         <size>
+          <width>1100</width>
+          <height>150</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string>background-color: #f5f5f5; border: 1px solid #33691e;</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QFrame" name="frame_original">
+          <property name="minimumSize">
+           <size>
+            <width>540</width>
+            <height>200</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string>background-color: #f5f5f5; border: 1px solid #33691e;</string>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="frame_modificada">
+          <property name="minimumSize">
+           <size>
+            <width>540</width>
+            <height>200</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string>background-color: #f5f5f5; border: 1px solid #33691e;</string>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btn_cargar</sender>
+   <signal>clicked()</signal>
+   <receiver>SignalTabWidget</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>671</x>
+     <y>27</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>872</x>
+     <y>51</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

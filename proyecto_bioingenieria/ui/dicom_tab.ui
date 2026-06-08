@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DicomTabWidget</class>
+ <widget class="QWidget" name="DicomTabWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1150</width>
+    <height>852</height>
+   </rect>
+  </property>
+  <property name="styleSheet">
+   <string>background-color: #ffffff; color: #1a1a1a;</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_5">
+   <item>
+    <widget class="QPushButton" name="btn_cargar">
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="toolTip">
+      <string>Cargar carpeta DICOM, archivo .dcm, imagen JPG o PNG</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton { background-color: #33691e; color: white; border: none; padding: 8px 16px; border-radius: 5px; font-size: 14px; font-weight: bold; } QPushButton:hover { background-color: #558b2f; } QPushButton:pressed { background-color: #1b5e20; }</string>
+     </property>
+     <property name="text">
+      <string>📂  CARGAR IMAGEN </string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTableWidget" name="tabla_metadatos">
+     <property name="styleSheet">
+      <string>QTableWidget { background-color: #e8f0e2; color: #1a1a1a; gridline-color: #33691e; } QHeaderView::section { background-color: #33691e; color: white; }</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="layout_cortes">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="lbl_sagital_titulo">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>16</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>color: #558b2f; font-weight: bold;</string>
+         </property>
+         <property name="text">
+          <string>SAGITAL</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lbl_sagital">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>1</horstretch>
+           <verstretch>1</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>320</width>
+           <height>280</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: #f5f5f5; border: 1px solid #33691e; border-radius: 4px;</string>
+         </property>
+         <property name="text">
+          <string>Corte Sagital</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="slider_sagital">
+         <property name="minimum">
+          <number>0</number>
+         </property>
+         <property name="maximum">
+          <number>100</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="lbl_coronal_titulo">
+         <property name="styleSheet">
+          <string>color: #558b2f; font-weight: bold;</string>
+         </property>
+         <property name="text">
+          <string>CORONAL</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lbl_coronal">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>1</horstretch>
+           <verstretch>1</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>320</width>
+           <height>280</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: #f5f5f5; border: 1px solid #33691e; border-radius: 4px;</string>
+         </property>
+         <property name="text">
+          <string>Corte Coronal</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="slider_coronal">
+         <property name="minimum">
+          <number>0</number>
+         </property>
+         <property name="maximum">
+          <number>100</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QLabel" name="lbl_axial_titulo">
+         <property name="styleSheet">
+          <string>color: #558b2f; font-weight: bold;</string>
+         </property>
+         <property name="text">
+          <string>AXIAL</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lbl_axial">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>1</horstretch>
+           <verstretch>1</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>320</width>
+           <height>280</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: #f5f5f5; border: 1px solid #33691e; border-radius: 4px;</string>
+         </property>
+         <property name="text">
+          <string>Corte Axial</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="slider_axial">
+         <property name="minimum">
+          <number>0</number>
+         </property>
+         <property name="maximum">
+          <number>100</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="group_procesamiento">
+     <property name="styleSheet">
+      <string>QGroupBox { border: 2px solid #33691e; border-radius: 5px; margin-top: 10px; padding-top: 10px; color: #558b2f; }</string>
+     </property>
+     <property name="title">
+      <string>Procesamiento</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="btn_zoom">
+        <property name="toolTip">
+         <string>Recortar y redimensionar una región del corte axial actual</string>
+        </property>
+        <property name="styleSheet">
+         <string>QPushButton { background-color: #33691e; color: white; border: none; padding: 6px 12px; border-radius: 5px; } QPushButton:hover { background-color: #558b2f; }</string>
+        </property>
+        <property name="text">
+         <string>🔍 ZOOM</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="combo_binarizacion">
+        <property name="toolTip">
+         <string>Seleccione el tipo de umbralización para segmentar</string>
+        </property>
+        <property name="styleSheet">
+         <string>QComboBox { background-color: #e8f0e2; color: #1a1a1a; border: 1px solid #33691e; padding: 4px 8px; border-radius: 4px; } QComboBox QAbstractItemView { background-color: #ffffff; color: #1a1a1a; selection-background-color: #558b2f; selection-color: white; }</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_segmentar">
+        <property name="toolTip">
+         <string>Aplicar binarización al recorte actual (haga ZOOM primero)</string>
+        </property>
+        <property name="styleSheet">
+         <string>QPushButton { background-color: #e63946; color: white; border: none; padding: 6px 12px; border-radius: 5px; } QPushButton:hover { background-color: #ff6b6b; }</string>
+        </property>
+        <property name="text">
+         <string>✂ SEGMENTAR</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lbl_kernel">
+        <property name="styleSheet">
+         <string notr="true">color: #33691e; font-size: 14px;</string>
+        </property>
+        <property name="text">
+         <string>Kernel:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="spin_kernel">
+        <property name="toolTip">
+         <string>Tamaño del kernel morfológico (valores impares recomendados)</string>
+        </property>
+        <property name="styleSheet">
+         <string>QSpinBox { background-color: #e8f0e2; color: #1a1a1a; border: 1px solid #33691e; padding: 4px; border-radius: 4px; }</string>
+        </property>
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>31</number>
+        </property>
+        <property name="singleStep">
+         <number>2</number>
+        </property>
+        <property name="value">
+         <number>3</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="combo_morfologia">
+        <property name="toolTip">
+         <string>Tipo de transformación morfológica a aplicar</string>
+        </property>
+        <property name="styleSheet">
+         <string>QComboBox { background-color: #e8f0e2; color: #1a1a1a; border: 1px solid #33691e; padding: 4px 8px; border-radius: 4px; } QComboBox QAbstractItemView { background-color: #ffffff; color: #1a1a1a; selection-background-color: #558b2f; selection-color: white; }</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_morfologia">
+        <property name="toolTip">
+         <string>Aplicar transformación morfológica al recorte segmentado</string>
+        </property>
+        <property name="styleSheet">
+         <string>QPushButton { background-color: #9e9e9e; color: white; border: none; padding: 6px 12px; border-radius: 5px; } QPushButton:hover { background-color: #bdbdbd; }</string>
+        </property>
+        <property name="text">
+         <string>⬡ MORFOLOGÍA</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_convertir_nifti">
+        <property name="toolTip">
+         <string>Convertir el DICOM cargado a formato NIfTI (.nii)</string>
+        </property>
+        <property name="styleSheet">
+         <string>QPushButton { background-color: #33691e; color: white; border: none; padding: 6px 12px; border-radius: 5px; } QPushButton:hover { background-color: #558b2f; }</string>
+        </property>
+        <property name="text">
+         <string>💾 EXPORTAR NIFTI</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="group_zoom">
+     <property name="styleSheet">
+      <string>QGroupBox { border: 2px solid #33691e; border-radius: 5px; margin-top: 10px; padding-top: 10px; color: #558b2f; }</string>
+     </property>
+     <property name="title">
+      <string>Zoom - Original vs Recortada</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_zoom">
+      <item>
+       <layout class="QHBoxLayout" name="layout_zoom_controls">
+        <item>
+         <widget class="QLabel" name="lbl_center_x">
+          <property name="styleSheet">
+           <string>color: #33691e; font-weight: bold;</string>
+          </property>
+          <property name="text">
+           <string>Centro X:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="spin_center_x">
+          <property name="toolTip">
+           <string>Coordenada X del centro del recorte (en pixeles)</string>
+          </property>
+          <property name="styleSheet">
+           <string>QSpinBox { background-color: #e8f0e2; color: #1a1a1a; border: 1px solid #33691e; padding: 2px 4px; border-radius: 3px; }</string>
+          </property>
+          <property name="minimum">
+           <number>0</number>
+          </property>
+          <property name="maximum">
+           <number>99999</number>
+          </property>
+          <property name="value">
+           <number>256</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lbl_center_y">
+          <property name="styleSheet">
+           <string>color: #33691e; font-weight: bold;</string>
+          </property>
+          <property name="text">
+           <string>Centro Y:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="spin_center_y">
+          <property name="toolTip">
+           <string>Coordenada Y del centro del recorte (en pixeles)</string>
+          </property>
+          <property name="styleSheet">
+           <string>QSpinBox { background-color: #e8f0e2; color: #1a1a1a; border: 1px solid #33691e; padding: 2px 4px; border-radius: 3px; }</string>
+          </property>
+          <property name="minimum">
+           <number>0</number>
+          </property>
+          <property name="maximum">
+           <number>99999</number>
+          </property>
+          <property name="value">
+           <number>256</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lbl_width">
+          <property name="styleSheet">
+           <string>color: #33691e; font-weight: bold;</string>
+          </property>
+          <property name="text">
+           <string>Ancho:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="spin_width">
+          <property name="toolTip">
+           <string>Ancho del recorte en pixeles</string>
+          </property>
+          <property name="styleSheet">
+           <string>QSpinBox { background-color: #e8f0e2; color: #1a1a1a; border: 1px solid #33691e; padding: 2px 4px; border-radius: 3px; }</string>
+          </property>
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>99999</number>
+          </property>
+          <property name="value">
+           <number>100</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lbl_height">
+          <property name="styleSheet">
+           <string>color: #33691e; font-weight: bold;</string>
+          </property>
+          <property name="text">
+           <string>Alto:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="spin_height">
+          <property name="toolTip">
+           <string>Alto del recorte en pixeles</string>
+          </property>
+          <property name="styleSheet">
+           <string>QSpinBox { background-color: #e8f0e2; color: #1a1a1a; border: 1px solid #33691e; padding: 2px 4px; border-radius: 3px; }</string>
+          </property>
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>99999</number>
+          </property>
+          <property name="value">
+           <number>100</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="layout_zoom_frames">
+        <item>
+         <widget class="QFrame" name="frame_original">
+          <property name="minimumSize">
+           <size>
+            <width>300</width>
+            <height>200</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string>background-color: #f5f5f5; border: 1px solid #33691e;</string>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="frame_recorte">
+          <property name="minimumSize">
+           <size>
+            <width>300</width>
+            <height>200</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string>background-color: #f5f5f5; border: 1px solid #33691e;</string>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btn_cargar</sender>
+   <signal>clicked()</signal>
+   <receiver>DicomTabWidget</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>986</x>
+     <y>40</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1141</x>
+     <y>39</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

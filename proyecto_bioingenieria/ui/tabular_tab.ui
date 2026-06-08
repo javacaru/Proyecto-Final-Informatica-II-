@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TabularTabWidget</class>
+ <widget class="QWidget" name="TabularTabWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1122</width>
+    <height>650</height>
+   </rect>
+  </property>
+  <property name="styleSheet">
+   <string>background-color: #ffffff; color: #1a1a1a;</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_3">
+   <item>
+    <widget class="QPushButton" name="btn_cargar">
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="toolTip">
+      <string>Cargar archivo de datos médicos en formato CSV o Excel (.xlsx)</string>
+     </property>
+     <property name="styleSheet">
+      <string>QPushButton { background-color: #33691e; color: white; border: none; padding: 8px 16px; border-radius: 5px; font-size: 13px; font-weight: bold; } QPushButton:hover { background-color: #558b2f; } QPushButton:pressed { background-color: #1b5e20; }</string>
+     </property>
+     <property name="text">
+      <string>📂  CARGAR ARCHIVO </string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QGroupBox" name="group_columnas">
+       <property name="styleSheet">
+        <string notr="true">QGroupBox { border: 2px solid #33691e; border-radius: 4px; margin-top: 10px; padding-top: 10px; color: #558b2f; }</string>
+       </property>
+       <property name="title">
+        <string>Columnas</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QLabel" name="lbl_seleccion">
+          <property name="styleSheet">
+           <string>color: #33691e;</string>
+          </property>
+          <property name="text">
+           <string>Seleccione columnas (mín. 1):</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QListWidget" name="lista_columnas">
+          <property name="styleSheet">
+           <string>QListWidget { background-color: #e8f0e2; color: #1a1a1a; border: 1px solid #33691e; } QListWidget::item:selected { background-color: #33691e; }</string>
+          </property>
+          <property name="selectionMode">
+           <enum>QAbstractItemView::MultiSelection</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QPushButton" name="btn_plot">
+            <property name="styleSheet">
+             <string>QPushButton { background-color: #33691e; color: white; border: none; padding: 6px; border-radius: 5px; } QPushButton:hover { background-color: #558b2f; }</string>
+            </property>
+            <property name="text">
+             <string>GRAFICAR PLOTS</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="combo_col1">
+            <property name="styleSheet">
+             <string>QComboBox { background-color: #e8f0e2; color: #1a1a1a; border: 1px solid #33691e; } QComboBox QAbstractItemView { background-color: #ffffff; color: #1a1a1a; selection-background-color: #558b2f; selection-color: white; }</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="combo_col2">
+            <property name="styleSheet">
+             <string>QComboBox { background-color: #e8f0e2; color: #1a1a1a; border: 1px solid #33691e; } QComboBox QAbstractItemView { background-color: #ffffff; color: #1a1a1a; selection-background-color: #558b2f; selection-color: white; }</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_scatter">
+            <property name="styleSheet">
+             <string>QPushButton { background-color: #e63946; color: white; border: none; padding: 6px; border-radius: 5px; } QPushButton:hover { background-color: #ff6b6b; }</string>
+            </property>
+            <property name="text">
+             <string>SCATTER</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="group_info">
+       <property name="styleSheet">
+        <string notr="true">QGroupBox { border: 2px solid #33691e; border-radius: 4px; margin-top: 10px; padding-top: 10px; color: #558b2f; }</string>
+       </property>
+       <property name="title">
+        <string>Info / Describe</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QTableWidget" name="tabla_info">
+          <property name="styleSheet">
+           <string>QTableWidget { background-color: #e8f0e2; color: #1a1a1a; gridline-color: #33691e; } QHeaderView::section { background-color: #33691e; color: white; }</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tabla_describe">
+          <property name="styleSheet">
+           <string>QTableWidget { background-color: #e8f0e2; color: #1a1a1a; gridline-color: #33691e; } QHeaderView::section { background-color: #33691e; color: white; }</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame_plot">
+     <property name="minimumSize">
+      <size>
+       <width>1100</width>
+       <height>340</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string>background-color: #f5f5f5; border: 1px solid #33691e;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btn_cargar</sender>
+   <signal>clicked()</signal>
+   <receiver>TabularTabWidget</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>538</x>
+     <y>22</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>673</x>
+     <y>49</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

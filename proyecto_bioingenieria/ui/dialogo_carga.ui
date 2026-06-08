@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DialogoCarga</class>
+ <widget class="QDialog" name="DialogoCarga">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>420</width>
+    <height>280</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>380</width>
+    <height>260</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Cargar imagen</string>
+  </property>
+  <property name="styleSheet">
+   <string>background-color: #ffffff; color: #1a1a1a;</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="lbl_titulo">
+     <property name="styleSheet">
+      <string>font-size: 13px; color: #558b2f; margin-bottom: 8px;</string>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;¿Qué tipo de imagen desea cargar?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="btn_carpeta">
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton { background-color: #33691e; color: white; border: none; padding: 12px; border-radius: 5px; font-size: 13px; } QPushButton:hover { background-color: #558b2f; }</string>
+     </property>
+     <property name="text">
+      <string>Carpeta DICOM (múltiples .dcm)</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="btn_archivo">
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string>QPushButton { background-color: #33691e; color: white; border: none; padding: 10px; border-radius: 5px; font-size: 13px; } QPushButton:hover { background-color: #558b2f; }</string>
+     </property>
+     <property name="text">
+      <string>Archivo DICOM (.dcm)</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="btn_imagen">
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string>QPushButton { background-color: #33691e; color: white; border: none; padding: 10px; border-radius: 5px; font-size: 13px; } QPushButton:hover { background-color: #558b2f; }</string>
+     </property>
+     <property name="text">
+      <string>Imagen JPG / PNG</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="btn_cancelar">
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string>QPushButton { background-color: transparent; color: #6c8aaa; border: 1px solid #aed581; padding: 6px; border-radius: 6px; font-size: 12px; } QPushButton:hover { color: #558b2f; border-color: #558b2f; }</string>
+     </property>
+     <property name="text">
+      <string>Cancelar</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btn_cancelar</sender>
+   <signal>clicked()</signal>
+   <receiver>DialogoCarga</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>246</x>
+     <y>252</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>411</x>
+     <y>75</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

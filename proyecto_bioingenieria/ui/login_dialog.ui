@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LoginDialog</class>
+ <widget class="QDialog" name="LoginDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>408</width>
+    <height>362</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>360</width>
+    <height>320</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>BioMed Analyzer Pro — Inicio de Sesión</string>
+  </property>
+  <property name="styleSheet">
+   <string>background-color: #ffffff; color: #1a1a1a;</string>
+  </property>
+  <layout class="QVBoxLayout" name="layout_login">
+   <property name="spacing">
+    <number>6</number>
+   </property>
+   <property name="leftMargin">
+    <number>32</number>
+   </property>
+   <property name="topMargin">
+    <number>22</number>
+   </property>
+   <property name="rightMargin">
+    <number>32</number>
+   </property>
+   <property name="bottomMargin">
+    <number>20</number>
+   </property>
+   <item>
+    <widget class="QLabel" name="lbl_titulo">
+     <property name="styleSheet">
+      <string>color: #558b2f; font-size: 20px;</string>
+     </property>
+     <property name="text">
+      <string>&lt;b&gt;Inicio de Sesión&lt;/b&gt;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="lbl_sub">
+     <property name="styleSheet">
+      <string>color: #5a7a4a; font-size: 11px; margin-bottom: 6px;</string>
+     </property>
+     <property name="text">
+      <string>Ingrese sus credenciales para continuar</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="lbl_id">
+     <property name="styleSheet">
+      <string>color: #33691e; font-size: 13px; font-weight: bold;</string>
+     </property>
+     <property name="text">
+      <string>ID de Usuario</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="txt_id">
+     <property name="toolTip">
+      <string>Ingrese el ID asignado a su cuenta</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+   background-color: #f0f4ed;
+   color: #1a1a1a;
+   border: 1px solid #aed581;
+   border-radius: 5px;
+   padding: 8px 10px;
+   font-size: 13px;
+}
+QLineEdit:focus {
+   border: 2px solid #558b2f;
+}</string>
+     </property>
+     <property name="placeholderText">
+      <string>Ej: admin, user1</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="lbl_password">
+     <property name="styleSheet">
+      <string>color: #33691e; font-size: 13px; font-weight: bold;</string>
+     </property>
+     <property name="text">
+      <string>Contraseña</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="txt_password">
+     <property name="toolTip">
+      <string>Ingrese su contraseña</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+   background-color: #f0f4ed;
+   color: #1a1a1a;
+   border: 1px solid #aed581;
+   border-radius: 5px;
+   padding: 8px 10px;
+   font-size: 13px;
+}
+QLineEdit:focus {
+   border: 2px solid #558b2f;
+}</string>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
+     <property name="placeholderText">
+      <string>••••••••</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="lbl_error">
+     <property name="styleSheet">
+      <string>color: #e63946; font-size: 12px;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="btn_login">
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="toolTip">
+      <string>Verificar credenciales e ingresar al sistema</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+   background-color: #33691e;
+   color: white;
+   border: none;
+   padding: 10px;
+   font-size: 15px;
+   font-weight: bold;
+   border-radius: 7px;
+}
+QPushButton:hover {
+   background-color: #558b2f;
+}
+QPushButton:pressed {
+   background-color: #1b5e20;
+}</string>
+     </property>
+     <property name="text">
+      <string>INICIAR SESIÓN</string>
+     </property>
+     <property name="default">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="btn_cancelar">
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string>QPushButton {
+   background-color: transparent;
+   color: #6c8aaa;
+   border: 1px solid #aed581;
+   padding: 6px;
+   font-size: 12px;
+   border-radius: 6px;
+}
+QPushButton:hover {
+   color: #558b2f;
+   border-color: #4a7aaa;
+}</string>
+     </property>
+     <property name="text">
+      <string>Cancelar</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btn_login</sender>
+   <signal>clicked()</signal>
+   <receiver>LoginDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>357</x>
+     <y>289</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>90</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_cancelar</sender>
+   <signal>clicked()</signal>
+   <receiver>LoginDialog</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>176</x>
+     <y>324</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>10</x>
+     <y>255</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
